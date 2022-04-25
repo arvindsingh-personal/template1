@@ -10,3 +10,9 @@
     border-style: solid;
     border-radius: 10px;
 }
+.cat-image {
+    border: 10px solid green;
+    float: right;
+    width: 200px;
+    border-radius: 50%;
+}
