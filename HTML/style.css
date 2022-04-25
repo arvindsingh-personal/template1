@@ -65,7 +65,7 @@
      color: cyan;
  }
  .yellow-text {
-    color: yellow;
+    color: yellow !important;
   }
   .blue-text {
     color:blue;
