@@ -52,5 +52,9 @@
      border: 5px solid black;
      text-align: center;
  }
+ 
+ [type="checkbox"] {
+     margin: 10px 0px 15px 0px;
+ }
 
   
