@@ -57,7 +57,8 @@
      margin: 10px 0px 15px 0px;
  }
  body{
-     background-color: pink;
+    background-color: rgb(187, 125, 238);
+
      color: green;
      font-family: monospace;
  }
@@ -69,7 +70,7 @@
     color: yellow !important;
   }
   .blue-text {
-    color:blue;
+    color: rgb(24, 42, 202)	rgb(218, 112, 214);
   }
   #H1 {
       color: #000000;
