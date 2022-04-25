@@ -22,3 +22,26 @@
 #cat-photo-app {
     background-color: green;
 }
+.injected-text {
+    margin-bottom: -25px;
+    text-align: center;
+  }
+.yellow-box {
+    background-color: yellow;
+    padding: 10px;
+}
+.red-box {
+  background-color: red;
+  padding: 20px;
+}
+
+ .blue-box {
+  background-color: blue;
+  padding: 10px;
+ }
+ .box {
+     border: 5px solid black;
+     text-align: center;
+ }
+
+  
