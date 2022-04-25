@@ -4,3 +4,8 @@
 .smaller-img {
     width: 100px;
 }
+.thick-green-border {
+    border-color: green;
+    border-width:10px ;
+    border-style: solid;
+}
