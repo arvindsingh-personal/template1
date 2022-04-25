@@ -90,6 +90,14 @@
     --penguin-belly: pink;
 
   }
+  @media (max-width: 350px) {
+    :root {
+    
+--penguin-size: 200px;
+     
+  --penguin-skin: black
+    }
+  }
   .penguin {
 
     /* Only change code below this line */
