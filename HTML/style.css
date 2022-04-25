@@ -29,15 +29,18 @@
 .yellow-box {
     background-color: yellow;
     padding: 10px;
+
 }
 .red-box {
   background-color: red;
   padding: 20px;
+  margin: 20px;
 }
 
  .blue-box {
   background-color: blue;
   padding: 10px;
+  margin: 20px;
  }
  .box {
      border: 5px solid black;
