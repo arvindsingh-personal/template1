@@ -81,7 +81,14 @@
   }
   .red-text {
       color:#FF0000;
+      
       color: #F00;
+  }
+
+  :root {
+ 
+    --penguin-belly: pink;
+
   }
   .penguin {
 
@@ -90,7 +97,7 @@
     --penguin-belly: white;
     --penguin-beak: orange;
     /* Only change code above this line */
-
+   
     position: relative;
     margin: auto;
     display: block;
@@ -108,6 +115,7 @@
     border-radius: 70% 70% 60% 60%;
     background: var(--penguin-skin);
     background: var(--pengiun-skin,black);
+    
   }
 
   .penguin-bottom {
@@ -259,11 +267,14 @@
 
   body {
     background:#c6faf1;
+    background: var(--penguin-belly, #c6faf1);
+
   }
 
   .penguin * {
     position: absolute;
   }
+  
 
 
   
