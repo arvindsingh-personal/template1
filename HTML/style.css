@@ -34,16 +34,19 @@
 .red-box {
   background-color: red;
   padding: 20px;
-  margin: 20px;
+  margin: -15px;
 }
 
  .blue-box {
   background-color: blue;
-  margin: -15px;
-  padding-top: 40px;
+    padding-top: 40px;
     padding-right: 20px;
     padding-bottom: 20px;
     padding-left: 40px;
+    margin-top: 40px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    margin-left: 40px;
  }
  .box {
      border: 5px solid black;
