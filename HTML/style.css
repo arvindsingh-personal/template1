@@ -63,6 +63,7 @@
  }
  .cyan {
      color: cyan;
+     color: #0FF;
  }
  .yellow-text {
     color: yellow !important;
@@ -75,9 +76,11 @@
   }
   .green-text{
     color: #00FF00;
+    
   }
   .red-text {
-      color:#FF0000
+      color:#FF0000;
+      color: #F00;
   }
 
 
