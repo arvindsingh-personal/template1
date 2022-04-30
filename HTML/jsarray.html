@@ -28,7 +28,38 @@
                 <button onclick="search()">Search</button>
             <div id="div1"></div>
         
-
+   <br>
     <script src="jsarray.js"></script>
+    
+    <label for="dropdown2"></label>
+    <select name="dropdown2" id="dropdown2" >
+        <option >-Sort-</option>
+        <option value="0">Ascending</option>
+        <option value="1">Descending</option>
+    </select>
+    <label for="dropdown3"></label>
+    <select name="dropdown3" id="dropdown3" onchange="sorting()">
+        <option >-Sort by-</option>
+        <option value="0" >Company</option>
+        <option value="1" >Model</option>
+        <option value="2" >Memory</option>
+        <option value="3"  >Price</option>
+    </select>
+
+    <div id="div2"></div>
+    <br>
+    <table>
+        <tr><td>Company:</td></tr>
+        <tr><td><input type="text"></td></tr>
+        <tr><td>Model:</td></tr>
+        <tr><td><input type="text"></td></tr>
+        <tr><td>Memory:</td></tr>
+        <tr><td><input type="text"></td></tr>
+        <tr><td>Price:</td></tr>
+        <tr><td><input type="text"></td></tr>
+        
+        <tr><td><button>Add</button></td></tr>
+    </table>
+
 </body>
 </html>
