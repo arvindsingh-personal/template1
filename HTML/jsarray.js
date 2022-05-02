@@ -23,6 +23,7 @@ products.forEach((row) => {
      
      let td = document.createElement("td");
      td.innerText = column;
+     
      tr.appendChild(td);
  });
  table.appendChild(tr);
@@ -39,8 +40,8 @@ var txt;
 function tableView(){
 Select = document.getElementById("dropdown").value;
 Item =document.getElementById("searchedItem").value;
-console.log(Select);
-console.log(Item);
+// console.log(Select);
+// console.log(Item);
 
 txt = "<table><tr><th>Company</th><th>Model</th><th>Memory</th><th>Price</th></tr>";
 for(let i=0 ; i<=4 ; i++){
@@ -86,8 +87,8 @@ function sorting(){
 const dropD2 = document.getElementById("dropdown2").value;
 const dropD3 = document.getElementById("dropdown3").value;
 
-console.log(dropD2);
-console.log(dropD3);
+// console.log(dropD2);
+// console.log(dropD3);
 
 if(dropD2 == 0){
 
@@ -124,10 +125,10 @@ function add(){
   var v3 = document.getElementById("memo").value;
   var v4 = document.getElementById("prc").value;
 
-  console.log(v1);
-  console.log(v2);
-  console.log(v3);
-  console.log(v4);
+  // console.log(v1);
+  // console.log(v2);
+  // console.log(v3);
+  // console.log(v4);
 
  var k = products.length;
  var i;
@@ -149,8 +150,8 @@ function add2() {
    prod = document.getElementById("bill").value;
    quant = document.getElementById("quant").value;
   
-  console.log(prod);
-  console.log(quant);
+  // console.log(prod);
+  // console.log(quant);
 
   if(prod == "Samsung Galaxy") 
       amount = 15000*quant;
@@ -182,3 +183,70 @@ function bill() {
   
  }
  
+ txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Action</th></tr>";
+ for(let i=0;i<products.length;i++) {
+ 
+   txt+="<tr>";
+   for(let j=0;j<products[i].length;j++){
+         txt += "<td>"+products[i][j]+"</td>";
+   }
+   txt+="<td><input type ='checkbox' id='"+products[i][0]+"' value='"+products[i][0]+"'><td></tr>";
+ }
+ txt += "</table>"; 
+ 
+ document.getElementById("div4").innerHTML = txt;
+
+ 
+
+// tableSortedView();
+// document.getElementById("div4").innerHTML = txt;
+ 
+// function Delete() {
+//   var values =[];
+//   var 
+//   for(let i=0;i<products.length;i++){
+//     document.getElementById()
+//   }
+// }
+
+products.forEach(column => {
+  let q = (column[3]/1000);
+   column[4] = q;
+});
+txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Quantity</th></tr>";
+for(let i=0;i<products.length;i++) {
+ 
+  txt+="<tr>";
+  for(let j=0;j<products[i].length;j++){
+        txt += "<td>"+products[i][j]+"</td>";
+  }
+  txt+="</tr>";
+}
+txt += "</table>"; 
+
+document.getElementById("div5").innerHTML = txt;
+
+
+function addToCart() {
+  var selectedProd = document.getElementById("cart").value;
+  var QUANT = document.getElementById("Quant").value;
+  console.log(selectedProd);
+  console.log(QUANT);
+
+  for(let i=0; i<products.length;i++){
+    if(products[i][0] == selectedProd)
+       products[i][4] = products[i][4]-QUANT;   
+  }
+  txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Quantity</th></tr>";
+for(let i=0;i<products.length;i++) {
+ 
+  txt+="<tr>";
+  for(let j=0;j<products[i].length;j++){
+        txt += "<td>"+products[i][j]+"</td>";
+  }
+  txt+="</tr>";
+}
+txt += "</table>"; 
+
+document.getElementById("div5").innerHTML = txt;
+}
