@@ -138,5 +138,47 @@ function add(){
 
    tableSortedView();
    document.getElementById("div3").innerHTML = txt;
- 
+   
 }
+var amount;
+const products2 = [];
+var prod;
+var quant;
+var totalAmount = 0;
+function add2() {
+   prod = document.getElementById("bill").value;
+   quant = document.getElementById("quant").value;
+  
+  console.log(prod);
+  console.log(quant);
+
+  if(prod == "Samsung Galaxy") 
+      amount = 15000*quant;
+  else if(prod == "Nokia S730") 
+      amount = 22000*quant;
+  else if(prod == "Xiaomi Note") 
+      amount = 12000*quant;
+  else if(prod == "Motorola G10") 
+      amount = 15000*quant;
+  else if(prod == "Apple S12") 
+      amount = 25000*quant;
+   
+   totalAmount += amount;
+   products2[products2.length] = [prod, quant, amount];
+   
+  
+}
+function bill() {
+  var txt2 = "<table><tr><th>Bill</th></tr><tr><th>Description</th><th>Quantity</th><th>Amount</th></tr>" ;
+  for(let i = 0 ; i < products2.length ; i++) {
+    txt2 += "<tr>";
+    for(let j = 0 ; j < products2[i].length ; j++) {
+      txt2 += "<td>" + products2[i][j] + "</td>";
+    }
+    txt2 += "</tr>";
+  }
+  txt2 += "<tr><td>Total</td><td></td><td>" + totalAmount + "</td></tr>";
+  document.getElementById("divBill").innerHTML = txt2;
+  
+ }
+ 
