@@ -213,6 +213,7 @@ products.forEach(column => {
   let q = (column[3]/1000);
    column[4] = q;
 });
+
 txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Quantity</th></tr>";
 for(let i=0;i<products.length;i++) {
  
@@ -249,4 +250,43 @@ for(let i=0;i<products.length;i++) {
 txt += "</table>"; 
 
 document.getElementById("div5").innerHTML = txt;
+}
+
+txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Quantity</th></tr>";
+for(let i=0;i<products.length;i++) {
+ 
+  txt+="<tr>";
+  for(let j=0;j<products[i].length;j++){
+        txt += "<td>"+products[i][j]+"</td>";
+  }
+  txt+="</tr>";
+}
+txt += "</table>"; 
+
+document.getElementById("div6").innerHTML = txt;
+
+function inventoryManager() {
+
+  var selectedProd2 = document.getElementById("inventory").value;
+  var QUANT2 = document.getElementById("Quant2").value;
+  console.log(selectedProd2);
+  console.log(QUANT2);
+
+  for(let i=0; i<products.length;i++){
+    if(products[i][0] == selectedProd2)
+       products[i][4] = parseInt(products[i][4]) +parseInt(QUANT2);   
+  }
+  txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Quantity</th></tr>";
+for(let i=0;i<products.length;i++) {
+ 
+  txt+="<tr>";
+  for(let j=0;j<products[i].length;j++){
+        txt += "<td>"+products[i][j]+"</td>";
+  }
+  txt+="</tr>";
+}
+txt += "</table>"; 
+
+document.getElementById("div6").innerHTML = txt;
+   
 }

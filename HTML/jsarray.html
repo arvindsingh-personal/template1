@@ -82,7 +82,7 @@
     </table>
     <div id="divBill"></div>
    
-   <!-- <table id="table2"></table> -->
+  
    <div id="div4"></div>
   <button onclick="Delete()">Delete</button>
   <div id="div5"></div>
@@ -99,6 +99,21 @@
 </td>
 <td><input type="text" placeholder="quantity" id="Quant"></td>
 <td><button onclick="addToCart()">Add</button></td>
+<div id="div6"></div>
+<td>
+    <label for="inventory"></label>
+    <select name="inventory" id="inventory">
+        <option >-Select Product-</option>
+        <option value="Samsung">Samsung Galaxy</option>
+        <option value="Nokia">Nokia S730</option>
+        <option value="Xiaomi">Xiaomi Note</option>
+        <option value="Motorola">Motorola G10</option>
+        <option value="Apple">Apple S12</option>
+    </select>
+</td>
+<td><input type="text" placeholder="quantity" id="Quant2"></td>
+<td><button onclick="inventoryManager()">Update</button></td>
+
    <script src="jsarray.js"></script>
 </body>
 </html>
