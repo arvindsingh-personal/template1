@@ -1,4 +1,3 @@
-    
 const products = [
         
   ["Samsung" , "Galaxy" , 64 , 15000],
@@ -197,10 +196,6 @@ function bill() {
  document.getElementById("div4").innerHTML = txt;
 
  
-
-// tableSortedView();
-// document.getElementById("div4").innerHTML = txt;
- 
 function Delete() {
   var values =[];
   for(let i=0;i<products.length;i++){
@@ -230,16 +225,17 @@ function Delete() {
   document.getElementById("div4").innerHTML = txt;
 }
 
+
 var quantityArray = products.map(function(arr) {
   return arr.slice();
  });
  quantityArray.forEach(column => {
    let q = (column[3]/1000);
-    column[4] = +q;
+    column[4] = q;
   });
-var newArray = products.map(function(arr) {
-  return arr.slice();
-});
+// var newArray = products.map(function(arr) {
+//   return arr.slice();
+// });
 txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Quantity</th></tr>";
 for(let i=0;i<quantityArray.length;i++) {
  
@@ -261,16 +257,16 @@ function addToCart() {
   console.log(selectedProd);
   console.log(QUANT);
 
-  for(let i=0; i<newArray.length;i++){
-    if(newArray[i][0] == selectedProd)
-       newArray[i][4] = newArray[i][4]-QUANT;   
+  for(let i=0; i<quantityArray.length;i++){
+    if(quantityArray[i][0] == selectedProd)
+       quantityArray[i][4] = quantityArray[i][4]-QUANT;   
   }
   txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Quantity</th></tr>";
-for(let i=0;i<newArray.length;i++) {
+for(let i=0;i<quantityArray.length;i++) {
  
   txt+="<tr>";
-  for(let j=0;j<newArray[i].length;j++){
-        txt += "<td>"+newArray[i][j]+"</td>";
+  for(let j=0;j<quantityArray[i].length;j++){
+        txt += "<td>"+quantityArray[i][j]+"</td>";
   }
   txt+="</tr>";
 }
@@ -279,8 +275,26 @@ txt += "</table>";
 document.getElementById("div5").innerHTML = txt;
 }
 
+var inventoryArray = products.map(function(arr) {
+  return arr.slice();
+});
+inventoryArray.forEach(column => {
+    let q = (column[3]/1000);
+     column[4] = q;
+  
+});
+txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Quantity</th></tr>";
+for(let i=0;i<inventoryArray.length;i++) {
+ 
+  txt+="<tr>";
+  for(let j=0;j<inventoryArray[i].length;j++){
+        txt += "<td>"+inventoryArray[i][j]+"</td>";
+  }
+  txt+="</tr>";
+}
+txt += "</table>"; 
 
-
+document.getElementById("div6").innerHTML = txt;
 
 function inventoryManager() {
 
@@ -289,16 +303,16 @@ function inventoryManager() {
   console.log(selectedProd2);
   console.log(QUANT2);
 
-  for(let i=0; i<products.length;i++){
-    if(products[i][0] == selectedProd2)
-       products[i][4] = parseInt(products[i][4]) +parseInt(QUANT2);   
+  for(let i=0; i<inventoryArray.length;i++){
+    if(inventoryArray[i][0] == selectedProd2)
+       inventoryArray[i][4] = parseInt(inventoryArray[i][4])+parseInt(QUANT2);   
   }
   txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Quantity</th></tr>";
-for(let i=0;i<products.length;i++) {
+for(let i=0;i<inventoryArray.length;i++) {
  
   txt+="<tr>";
-  for(let j=0;j<products[i].length;j++){
-        txt += "<td>"+products[i][j]+"</td>";
+  for(let j=0;j<inventoryArray[i].length;j++){
+        txt += "<td>"+inventoryArray[i][j]+"</td>";
   }
   txt+="</tr>";
 }
@@ -306,4 +320,51 @@ txt += "</table>";
 
 document.getElementById("div6").innerHTML = txt;
    
+}
+var rateArray = products.map(function(arr){
+   return arr.slice();
+});
+ rateArray.forEach(column => {
+    column[4] = 0;
+ });
+function rate() {
+   var selectedProd = document.getElementById("rateProduct").value;
+   var rate = document.getElementById("rate").value;
+
+   for(let i=0;i<rateArray.length;i++){
+      if(rateArray[i][0] == selectedProd){
+        rateArray[i][4] = rate;
+        break;
+      }
+   }
+   txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Rating</th></tr>";
+for(let i=0;i<rateArray.length;i++) {
+ 
+  txt+="<tr>";
+  for(let j=0;j<rateArray[i].length;j++){
+        txt += "<td>"+rateArray[i][j]+"</td>";
+  }
+  txt+="</tr>";
+}
+txt += "</table>"; 
+
+document.getElementById("div7").innerHTML = txt;
+}
+
+function priceSearch() {
+   var min = document.getElementById("min").value;
+   var max = document.getElementById("max").value;
+   txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th></tr>";
+   for(let i=0;i<products.length;i++){
+      if(products[i][3]>=min && products[i][3]<=max){
+        txt += "<tr>"
+        for(let j=0;j<products[i].length;j++){
+           txt += "<td>"+products[i][j]+"</td>";
+        }
+        txt += "</tr>";
+      }
+   }
+   txt += "</table>";
+
+   document.getElementById("div8").innerHTML = txt;
 }
