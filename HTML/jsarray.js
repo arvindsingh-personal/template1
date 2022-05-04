@@ -171,15 +171,14 @@ function add2() {
 function bill() {
   var txt2 = "<table><tr><th>Bill</th></tr><tr><th>Description</th><th>Quantity</th><th>Amount</th></tr>" ;
   for(let i = 0 ; i < products2.length ; i++) {
-    txt2 += "<tr>";
+    txt2 += "<tr>" ;
     for(let j = 0 ; j < products2[i].length ; j++) {
       txt2 += "<td>" + products2[i][j] + "</td>";
     }
-    txt2 += "</tr>";
+    txt2 += "</tr>" ;
   }
   txt2 += "<tr><td>Total</td><td></td><td>" + totalAmount + "</td></tr>";
   document.getElementById("divBill").innerHTML = txt2;
-  
  }
  
  txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Action</th></tr>";
