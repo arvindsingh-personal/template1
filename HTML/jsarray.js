@@ -359,12 +359,12 @@ function priceSearch() {
       if(products[i][3]>=min && products[i][3]<=max){
         txt += "<tr>"
         for(let j=0;j<products[i].length;j++){
-           txt += "<td>"+products[i][j]+"</td>";
-        }
-        txt += "</tr>";
-      }
-   }
-   txt += "</table>";
+          txt += "<td>"+products[i][j]+"</td>";
+       }
+       txt += "</tr>";
+     }
+  }
+  txt += "</table>";
 
-   document.getElementById("div8").innerHTML = txt;
+  document.getElementById("div8").innerHTML = txt;
 }
