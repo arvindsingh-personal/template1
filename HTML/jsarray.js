@@ -230,17 +230,22 @@ function Delete() {
   document.getElementById("div4").innerHTML = txt;
 }
 
-products.forEach(column => {
-  let q = (column[3]/1000);
-   column[4] = q;
+var quantityArray = products.map(function(arr) {
+  return arr.slice();
+ });
+ quantityArray.forEach(column => {
+   let q = (column[3]/1000);
+    column[4] = +q;
+  });
+var newArray = products.map(function(arr) {
+  return arr.slice();
 });
-
 txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Quantity</th></tr>";
-for(let i=0;i<products.length;i++) {
+for(let i=0;i<quantityArray.length;i++) {
  
   txt+="<tr>";
-  for(let j=0;j<products[i].length;j++){
-        txt += "<td>"+products[i][j]+"</td>";
+  for(let j=0;j<quantityArray[i].length;j++){
+        txt += "<td>"+quantityArray[i][j]+"</td>";
   }
   txt+="</tr>";
 }
@@ -250,21 +255,22 @@ document.getElementById("div5").innerHTML = txt;
 
 
 function addToCart() {
+  
   var selectedProd = document.getElementById("cart").value;
   var QUANT = document.getElementById("Quant").value;
   console.log(selectedProd);
   console.log(QUANT);
 
-  for(let i=0; i<products.length;i++){
-    if(products[i][0] == selectedProd)
-       products[i][4] = products[i][4]-QUANT;   
+  for(let i=0; i<newArray.length;i++){
+    if(newArray[i][0] == selectedProd)
+       newArray[i][4] = newArray[i][4]-QUANT;   
   }
   txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Quantity</th></tr>";
-for(let i=0;i<products.length;i++) {
+for(let i=0;i<newArray.length;i++) {
  
   txt+="<tr>";
-  for(let j=0;j<products[i].length;j++){
-        txt += "<td>"+products[i][j]+"</td>";
+  for(let j=0;j<newArray[i].length;j++){
+        txt += "<td>"+newArray[i][j]+"</td>";
   }
   txt+="</tr>";
 }
@@ -273,18 +279,8 @@ txt += "</table>";
 document.getElementById("div5").innerHTML = txt;
 }
 
-txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Quantity</th></tr>";
-for(let i=0;i<products.length;i++) {
- 
-  txt+="<tr>";
-  for(let j=0;j<products[i].length;j++){
-        txt += "<td>"+products[i][j]+"</td>";
-  }
-  txt+="</tr>";
-}
-txt += "</table>"; 
 
-document.getElementById("div6").innerHTML = txt;
+
 
 function inventoryManager() {
 
