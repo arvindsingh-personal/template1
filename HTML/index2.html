@@ -269,6 +269,19 @@ function testStrict(val) {
 testStrict(10);
 testStrict(7);
 testStrict("7");
+function testGreaterThan(val) {
+  if (val>100 ) { 
+    return "Over 100";
+  }
+
+  if (val>10) {  
+    return "Over 10";
+  }
+
+  return "10 or Under";
+}
+
+console.log(testGreaterThan(101));
 
 
 </script>
