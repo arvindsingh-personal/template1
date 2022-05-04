@@ -201,13 +201,34 @@ function bill() {
 // tableSortedView();
 // document.getElementById("div4").innerHTML = txt;
  
-// function Delete() {
-//   var values =[];
-//   var 
-//   for(let i=0;i<products.length;i++){
-//     document.getElementById()
-//   }
-// }
+function Delete() {
+  var values =[];
+  for(let i=0;i<products.length;i++){
+     var chk = document.getElementById(products[i][0]).checked;
+     if(chk == true){
+        values.push(products[i][0]);
+     }
+  }
+
+
+  for(let i=0;i<values.length;i++){
+    for(let j=0;j<products.length;j++){
+       if(products[j][0] == values[i])
+          products.splice(j,1);
+    }
+  }
+
+  txt = "<table><tr><th>Company</th><th>Model</ht><th>Memory</th><th>Price</th><th>Action</th></tr>";
+  for(let i=0;i<products.length;i++){
+     txt += "<tr>";
+     for(let j=0;j<products[i].length;j++){
+        txt += "<td>"+products[i][j]+"</td>";
+     }
+     txt += "<td><input type = 'checkbox' id = '"+products[i][0]+"' value = '"+products[i][0]+"'></td></tr>";
+  }
+  txt += "</table>";
+  document.getElementById("div4").innerHTML = txt;
+}
 
 products.forEach(column => {
   let q = (column[3]/1000);
