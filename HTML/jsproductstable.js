@@ -5,12 +5,12 @@ function product()
     let Name=document.getElementById("NM").value;
     let Price=document.getElementById("PRC").value;
     
-    if(Id == "")
-      alert("Please fill all required fields");
-    if(Name == "")
-      alert("Please fill all required fields");
-    if(Price == "")
-      alert("Please fill all required fields");
+    // if(Id == "")
+    //   alert("Please fill all required fields");
+    // if(Name == "")
+    //   alert("Please fill all required fields");
+    // if(Price == "")
+    //   alert("Please fill all required fields");
 
     const tr = document.createElement("tr");
 
