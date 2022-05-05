@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#cpwd').keyup(function(){   
+              if($(this).val() != $('#pwd').val().substr(0,$(this).val().length))
+              {
+                 $("#divInfo").text("Passwords didn't match");
+                 $("#divInfo").css("color","red");
+              }
+            });
+          });
+    </script>
+</head>
+<body>
+    <div>
+        <form>
+            Password: <br>
+            <input type="text" id="pwd"> <br>
+            Confirm Password: <br>
+            <input type="text" id="cpwd"> <br>
+            <div id="divInfo" style="width: 184px; height: 20px; color: red ;"></div>
+            <button>Submit</button>
+        </form>
+    </div>
+    
+</body>
+</html>
