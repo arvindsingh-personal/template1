@@ -15,7 +15,14 @@
                  $("#divInfo").css("color","red");
               }
             });
+            $('#Ceven').click(function(){
+                $("tr:even").css("background-color", "LightGray");
+            });
+            $('#Codd').click(function(){
+                $("tr:odd").css("background-color", "dodgerblue");
+            });
           });
+        
     </script>
 </head>
 <body>
@@ -29,6 +36,41 @@
             <button>Submit</button>
         </form>
     </div>
+    <br>
+<div>
+    <button id="Ceven">Color Even Rows</button>
+    <button id="Codd">Color Odd Rows</button>   <br>
+    <table>
+        <tr><th>Company</th>
+        <th>Contact</th>
+        <th>Country</th></tr>
+
+        <tr><td>Ernst Trading</td>
+        <td>Ronald Mendel</td>
+        <td>Australia</td></tr>
+
+        <tr><td>Ernst Trading</td>
+            <td>Ronald Mendel</td>
+            <td>Australia</td></tr>
+
+        <tr><td>Ernst Trading</td>
+            <td>Ronald Mendel</td>
+            <td>Australia</td></tr>
+
+        <tr><td>Ernst Trading</td>
+            <td>Ronald Mendel</td>
+            <td>Australia</td></tr>
+
+        <tr><td>Ernst Trading</td>
+            <td>Ronald Mendel</td>
+            <td>Australia</td></tr>
+
+        <tr><td>Ernst Trading</td>
+            <td>Ronald Mendel</td>
+            <td>Australia</td></tr>
+       
+    </table>
+</div>
     
 </body>
 </html>
