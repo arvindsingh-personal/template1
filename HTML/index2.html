@@ -789,7 +789,11 @@ do {
   myarray2.push(i);
   i++;
 }while(i < 11);
-
+function sum(arr, n) {
+  if(n <= 0)
+    return 0;
+  return sum(arr, n - 1) + arr[n-1];
+}
 </script>
 </body>
 </html>
