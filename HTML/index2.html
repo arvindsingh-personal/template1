@@ -881,6 +881,16 @@ function countdown(n){
   }
 }
 console.log(countdown(5));
+function rangeOfNumbers(startNum, endNum) {
+  if(startNum > endNum)
+    return [];
+  else {
+    const array = rangeOfNumbers(startNum, endNum -1);
+    array.push(endNum);
+    return array;
+  }
+};
+console.log(rangeOfNumbers(1,5));
 </script>
 </body>
 </html>
