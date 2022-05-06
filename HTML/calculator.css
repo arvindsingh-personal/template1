@@ -1,0 +1,15 @@
+body {
+    margin: 50px;
+}
+.table-class td {
+    padding: 10px;
+}
+button {
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+.input-class {
+    margin-left: 12px;
+    padding: 5px 10px 5px 5px;
+}
