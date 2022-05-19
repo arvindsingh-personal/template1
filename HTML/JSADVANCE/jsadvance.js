@@ -1,3 +1,4 @@
+// Design an HTML page to take the employee details as input from the user and display them according to the given format attached.
 function Add() {
     const td1 = document.createElement('td');
     const td2 = document.createElement('td');
@@ -41,3 +42,17 @@ function Add() {
 function Delete(value1) {
    value1.parentElement.parentElement.remove();
 }
+
+// Write a class to declare all the details of the employee as mentioned in the above HTML page. Create an object of the class and display it.
+class Employee {
+    constructor(Id,Name,Salary) {
+        this.Id = Id;
+        this.Name = Name;
+        this.Salary = Salary;
+    }
+}
+ 
+let emp = new Employee(2050,"Arvind Singh",32000);
+let tr = "<tr><th>ID</th><th>Name</th><th>Total Salary</th></tr>" + 
+         "<tr><td>"+emp.Id+"</td><td>"+emp.Name+"</td><td>"+emp.Salary+"</td></tr>"
+document.getElementById('table2').innerHTML = tr;
