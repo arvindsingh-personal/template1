@@ -1,5 +1,11 @@
 // Design an HTML page to take the employee details as input from the user and display them according to the given format attached.
+
+// Apply employee name validation (not be empty, not a number). Use try, catch and throw and display the proper error message if any during validation.
+
 function Add() {
+
+    let errorMessage = document.getElementById('error');
+
     const td1 = document.createElement('td');
     const td2 = document.createElement('td');
     const td3 = document.createElement('td');
@@ -14,6 +20,15 @@ function Add() {
     a.setAttribute('class','Delete');
     a.setAttribute('href','#');
     a.setAttribute('onclick','Delete(this)');
+
+    try {
+        if(name == "" ) throw "Name can not be empty";
+        if ( name == Number(name)) throw "Name should be string not a number";
+        if(id == "") throw "All fields must be filled";
+        if(salary == "") throw "All fields must be filled";
+    } catch (error) {
+        errorMessage.innerHTML = error;
+    }
 
     const f1 = document.createTextNode(id);
     const f2 = document.createTextNode(name);
@@ -113,7 +128,7 @@ function add_li(emp)
 // `<tr>
 //     <td>${emp.id}</td>
 //     <td>${emp.name}</td>
-//     <td>${emp.salary}</td>
+//     <td>${emp.salary}</td>Apply employee name validation (not be empty, not a number). Use try, catch and throw and display the proper error message if any during validation.
 // </tr>`
 
 // let tr_el = $(tr_str);
@@ -155,6 +170,6 @@ for(const emp of obj["employees"]) {
 
 // Create a separate JS file with a employee detail and import it to your main HTML/JS code to add and display this employee details in the HTML page.
 
-import {id, name, salary} from "./jsadvance1.js";
-let text = id + " " + name + " " + salary + ".";
-document.getElementById('importpara').innerHTML = text;
+// import {id, name, salary} from "./jsadvance1.js";
+// let text = id + " " + name + " " + salary + ".";
+// document.getElementById('importpara').innerHTML = text;
