@@ -54,7 +54,8 @@ class Employee {
  
 let emp1 = new Employee(1,"John",8000);
 let tr = "<tr><th>ID</th><th>Name</th><th>Total Salary</th></tr>" + 
-         "<tr><td>"+emp1.Id+"</td><td>"+emp1.Name+"</td><td>"+emp1.Salary+"</td></tr>"
+         "<tr><td>"+emp1.id+"</td><td>"+emp1.name+"</td><td>"+emp1.salary+"</td></tr>"
+
 document.getElementById('table2').innerHTML = tr;
 let emp2 = new Employee(2,"Mark",9000);
 let emp3 = new Employee(3,"Yash", "7000#####");
@@ -104,7 +105,7 @@ function add_li(emp)
         let tb = document.getElementById("table3");
         tb.appendChild(tr);
     } catch (error) {
-        message.innerHtML = error;
+        message.innerHTML = error;
     }
 }
 
@@ -128,6 +129,26 @@ for (const emp of obj["employees"]) {
 
 
 // Write a JS arrow function to display the employee name and 15% of the salary as output.
-var array;
-arrow = (val) => 
-document.getElementById('table2').append(arrow(emp1.salary));
+
+var arrowFunction;
+
+ arrowFunction = (val) =>  {
+     if(val.salary == Number(val.salary)){
+    let tr = document.createElement('tr');
+
+    let td1 = document.createElement('td');
+    td1.innerText = val.name;
+
+    let td2 = document.createElement('td');
+    td2.innerText = (val.salary * 15) / 100;
+
+    tr.appendChild(td1);
+    tr.appendChild(td2);
+     
+    var tb = document.getElementById('table4');
+    tb.appendChild(tr);
+     }
+}
+for(const emp of obj["employees"]) {
+    arrowFunction(emp);
+}
