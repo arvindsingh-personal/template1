@@ -52,7 +52,15 @@ class Employee {
     }
 }
  
-let emp = new Employee(2050,"Arvind Singh",32000);
+let emp1 = new Employee(1,"John",8000);
 let tr = "<tr><th>ID</th><th>Name</th><th>Total Salary</th></tr>" + 
          "<tr><td>"+emp.Id+"</td><td>"+emp.Name+"</td><td>"+emp.Salary+"</td></tr>"
 document.getElementById('table2').innerHTML = tr;
+let emp2 = new Employee(2,"Mark",9000);
+let emp3 = new Employee(3,"Yash",7000);
+
+// Use 'this' keyword to display the employee details (stored in JSON array) on the HTML page.
+let json = '{"employees":[' +
+           '{"ID":"'+emp1.Id+'","Name":"'+emp1.Name+'","Salary":"'+emp1.Salary+'"},'+
+           '{"ID":"'+emp2.Id+'","Name":"'+emp2.Name+'","Salary":"'+emp2.Salary+'"},'+
+           '{"ID":"'+emp3.Id+'","Name":"'+emp3.Name+'","Salary":"'+emp3.Salary+'"}]}';
