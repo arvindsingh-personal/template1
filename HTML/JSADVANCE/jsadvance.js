@@ -27,9 +27,6 @@ function Add() {
         if ( name == Number(name)) throw "Name should be string not a number";
         if(id == "") throw "All fields must be filled";
         if(salary == "") throw "All fields must be filled";
-    } catch (error) {
-        errorMessage.innerHTML = error;
-    }
 
     const f1 = document.createTextNode(id);
     const f2 = document.createTextNode(name);
@@ -50,6 +47,11 @@ function Add() {
     tr.appendChild(td4);
 
     document.getElementById('table').appendChild(tr);
+    } catch (error) {
+        errorMessage.innerHTML = error;
+    }
+
+    
 
     document.getElementById('id').value="";
     document.getElementById('name').value="";
@@ -82,7 +84,7 @@ let jsonArray = '{"employees":[' +
            '{"id":"'+emp1.id+'","name":"'+emp1.name+'","salary":"'+emp1.salary+'"},'+
            '{"id":"'+emp2.id+'","name":"'+emp2.name+'","salary":"'+emp2.salary+'"},'+
            '{"id":"'+emp3.id+'","name":"'+emp3.name+'","salary":"'+emp3.salary+'"}]}';
-
+                     
 const obj = JSON.parse(jsonArray);
 var txt="";
 
