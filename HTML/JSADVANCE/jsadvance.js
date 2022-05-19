@@ -1,7 +1,7 @@
 // Design an HTML page to take the employee details as input from the user and display them according to the given format attached.
 
 // Apply employee name validation (not be empty, not a number). Use try, catch and throw and display the proper error message if any during validation.
-
+"use strict";
 
 function Add() {
 
@@ -74,7 +74,7 @@ let tr = "<tr><th>ID</th><th>Name</th><th>Total Salary</th></tr>" +
 
 document.getElementById('table2').innerHTML = tr;
 let emp2 = new Employee(2,"Mark",9000);
-let emp3 = new Employee(3,"Yash", "7000#####");
+let emp3 = new Employee(3,"Yash", 7000);
 
 // Use 'this' keyword to display the employee details (stored in JSON array) on the HTML page.
 
@@ -159,12 +159,8 @@ var arrowFunction;
     td2.innerText = (val.salary * 15) / 100;
 
     tr.appendChild(td1);
-    tr.appendChild(td2);
-     
-    var tb = document.getElementById('table4');
-    tb.appendChild(tr);
-     }
-}
+    } 
+ }
 for(const emp of obj["employees"]) {
     arrowFunction(emp);
 }
@@ -174,4 +170,41 @@ for(const emp of obj["employees"]) {
 // import {id, name, salary} from "./jsadvance1.js";
 // let text = id + " " + name + " " + salary + ".";
 // document.getElementById('importpara').innerHTML = text;
+
+// Change the salary of each employee to 30,000/- with the help of a function in strict mode and display the result.
+
+function  add_updated_salary(emp)
+{
+    console.log(emp);
+    const message = document.getElementById('errorPara');
+
+    let tr = document.createElement("tr");
+
+    let td1 = document.createElement("td");
+    td1.innerText = emp.id;
+    tr.appendChild(td1);
+    
+    let td2 = document.createElement("td");
+    td2.innerText = emp.name;
+    tr.appendChild(td2);
+
+    let td3 = document.createElement("td");
+    td3.innerText = emp.salary;
+    tr.appendChild(td3);
+    
+    
+        let tb = document.getElementById("table5");
+        tb.appendChild(tr);
+    
+    
+}
+
+
+for(let key in obj['employees']) {
+    obj['employees'][key].salary = 30000;
+}
+
+for (const emp of obj["employees"]) {
+    add_updated_salary(emp);
+}
 
