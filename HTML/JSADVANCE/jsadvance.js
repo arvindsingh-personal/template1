@@ -152,3 +152,9 @@ var arrowFunction;
 for(const emp of obj["employees"]) {
     arrowFunction(emp);
 }
+
+// Create a separate JS file with a employee detail and import it to your main HTML/JS code to add and display this employee details in the HTML page.
+
+import {id, name, salary} from "./jsadvance1.js";
+let text = id + " " + name + " " + salary + ".";
+document.getElementById('importpara').innerHTML = text;
