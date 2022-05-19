@@ -2,6 +2,7 @@
 
 // Apply employee name validation (not be empty, not a number). Use try, catch and throw and display the proper error message if any during validation.
 
+
 function Add() {
 
     let errorMessage = document.getElementById('error');
@@ -87,7 +88,7 @@ var txt="";
 
 
 console.log(obj);
-debugger;
+// debugger;
 
 // Apply proper error handling (try-catch) and calculate the salary of an employee as salary * 1.10 and display the employee details with updated salary.
 
@@ -173,3 +174,4 @@ for(const emp of obj["employees"]) {
 // import {id, name, salary} from "./jsadvance1.js";
 // let text = id + " " + name + " " + salary + ".";
 // document.getElementById('importpara').innerHTML = text;
+
