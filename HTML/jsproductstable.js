@@ -32,3 +32,4 @@ function product()
 
     document.getElementById("SHOW").appendChild(tr);
 }
+  
