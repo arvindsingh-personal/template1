@@ -165,7 +165,7 @@ function add2() {
    
    totalAmount += amount;
    products2[products2.length] = [prod, quant, amount];
-   
+    
   
 }
 function bill() {
