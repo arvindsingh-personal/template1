@@ -1,0 +1,95 @@
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding:0;
+    overflow: hidden;
+    background-color: #333;
+   
+}
+
+li {
+    float:left;
+    border-right: 1px solid rgb(192, 192, 192);
+    
+}
+li a { 
+   display: block;    
+   color: white;
+   text-align: center;
+   padding: 4px 8px;
+   text-decoration: none;
+}
+li a:hover {
+    background-color: green;
+}
+.site {
+    background-color: rgb(192, 192, 192);
+}
+
+#sitename {
+    padding-left: 3%;
+    padding-top: 1%;
+    margin-bottom: 0.8%;
+    font-size: 30px;
+}
+body {
+    margin: 0px;
+}
+.section1 {
+    
+    float: left;
+    width: 50vw;
+    padding-left: 24px;
+    font-size: 14px;
+    
+}
+@media (max-width:750px) {
+  .section1 {
+      width: 90%;
+      height: 10%;
+      
+  }
+}
+.section1 h1{
+    margin-bottom: -2%;
+}
+.section2 {
+    float: right;
+    width: 35%;
+    background-color: rgb(209, 209, 209);
+    height: 83vh;
+    padding: 3px 25px 25px 25px;
+    font-size: 14px;
+}
+@media (max-width:750px) {
+    .section2 {
+        float: left;
+        width: 100vw;
+        height: 30vh;
+    }
+}
+
+
+.section1 h1 {
+    color: rgb(6, 101, 211);
+}
+
+.section2 h2 {
+    color: rgb(6, 101, 211);
+
+}
+
+.footer{
+    position: fixed;
+    padding: 4px;
+    width: 100vw;
+    height: 40px;
+    bottom: 0;
+    background-color: gray;
+    text-align: right;
+    margin: 0 auto;
+}
+.footer p {
+    padding-right: 18px;
+}
