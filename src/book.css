@@ -1,0 +1,48 @@
+.book {
+    display: flex;
+    
+    background-color: #ffffff;
+    width: 89vw;
+    margin: 0.3rem;
+    padding: 1.5vw;
+    border-radius: 6px;
+}
+
+.book .btns {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    text-align: end;
+    margin: auto;
+}
+
+ .btns button {
+    /* padding: 2vw; */
+    height: 2.3rem;
+    width: 12rem;
+    margin: 5px;
+    border: 0;
+    background-color: rgb(243, 102, 21);
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ .btns button a {
+  text-decoration: none;
+  color: white;
+}
+.book .img img {
+    height: 220px;
+    border-radius: 5px;
+    width: 9.5rem;
+}
+
+.book .content {
+    padding-left: 1rem;
+    width: 42rem;
+    /* align-items: center; */
+    /* text-align: center; */
+    margin: auto;
+}

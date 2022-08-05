@@ -1,0 +1,32 @@
+.main-single {
+    background-color: #ddfff5;
+    height: 100vh;
+    padding-top: 1rem;
+}
+.singlepage {
+    display: flex;
+    border: 1px solid rgb(211, 211, 211);
+     padding: 2rem;
+    background-color: aliceblue;
+    border-radius: 5px;
+    box-shadow: 0px -3px 18px gray;
+
+}
+.singlepage .left {
+    border: 1px solid gray;
+    padding: 1rem;
+    height: 100%;
+    border-radius: 5px;
+}
+.singlepage .left img {
+    width: 15rem;
+    border-radius: 5px;
+}
+.singlepage .right #para1 {
+   color: rgb(95, 92, 92);
+   font-size: 1.2rem;
+   font-weight: 300;
+}
+.singlepage .right #para2 {
+    margin-top: 0;
+ }
