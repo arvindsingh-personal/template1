@@ -73,7 +73,7 @@ export default function Book() {
           </div>
           <div className='content'>
             <p style={{
-              fontWeight: '600', fontSize: '1.4rem', marginBottom: '0'
+              fontWeight: '600', fontSize: '1.4rem', marginBottom: '0',fontFamily:'cursive'
             }}
             >{item.title_suggest}</p>
             <p><span style={{ color: 'rgb(66, 66, 66)', marginTop: '0' }}>by </span>

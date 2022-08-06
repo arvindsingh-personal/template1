@@ -15,9 +15,11 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import { Button } from '@mui/material';
 import { useState, useContext } from 'react';
 import axios from 'axios';
 import { bookContext } from './App';
+import { NavLink } from 'react-router-dom';
 
 
 const Search = styled('div')(({ theme }) => ({
@@ -66,12 +68,10 @@ export default function Navbar() {
   const url = `https://openlibrary.org/search.json?q=${bookName}&mode=ebooks&has_fulltext=true`;
 
   const searchBook = (event) => {
-    if(event.key === 'Enter') {
       axios.get(url).then((response)=> {
         setBook(response.data.docs)
         console.log(response.data.docs)
       })
-    }
   }
 
   return (
@@ -84,7 +84,7 @@ export default function Navbar() {
             component='div'
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            Book
+           <NavLink to='/' style={{textDecoration:'none',color:'white', fontSize:'3vw'}} > Book</NavLink>
           </Typography>
           <Search >
             <SearchIconWrapper >
@@ -95,9 +95,9 @@ export default function Navbar() {
              inputProps={{ 'aria-label': 'search' }}
              value={bookName}
              onChange={event => setBookName(event.target.value)}
-             onKeyPress={searchBook}
             />
           </Search>
+          <Button variant="outlined" sx={{color:'white',border:'1px solid white',fontWeight:'900'}} onClick={searchBook}>Search</Button>
         </Toolbar>
       </AppBar>
     </Box>
