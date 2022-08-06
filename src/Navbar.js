@@ -3,24 +3,14 @@ import { styled, alpha } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
-import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import Badge from '@mui/material/Badge';
-import MenuItem from '@mui/material/MenuItem';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
-import AccountCircle from '@mui/icons-material/AccountCircle';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
-import MoreIcon from '@mui/icons-material/MoreVert';
 import { Button } from '@mui/material';
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import axios from 'axios';
 import { bookContext } from './App';
 import { NavLink } from 'react-router-dom';
-
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -63,22 +53,22 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
-  let { setBook, bookName, setBookName} = useContext(bookContext);
+  let { setBook, bookName, setBookName } = useContext(bookContext);
 
   const url = `https://openlibrary.org/search.json?q=${bookName}&mode=ebooks&has_fulltext=true`;
 
-  
+
 
   const searchBook = (event) => {
-      axios.get(url).then((response)=> {
-        setBook(response.data.docs)
-        console.log(response.data.docs)
-      })
+    axios.get(url).then((response) => {
+      setBook(response.data.docs)
+      console.log(response.data.docs)
+    })
   }
 
   return (
     <Box >
-      <AppBar sx={{backgroundColor:'brown'}} position='static' >
+      <AppBar sx={{ backgroundColor: 'brown' }} position='static' >
         <Toolbar >
           <Typography
             variant='h6'
@@ -86,20 +76,20 @@ export default function Navbar() {
             component='div'
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-           <NavLink to='/' style={{textDecoration:'none',color:'white', fontSize:'3vw'}} > Book</NavLink>
+            <NavLink to='/' style={{ textDecoration: 'none', color: 'white', fontSize: '3vw' }} > Book</NavLink>
           </Typography>
           <Search >
             <SearchIconWrapper >
               <SearchIcon />
             </SearchIconWrapper>
-            <StyledInputBase 
-             placeholder="Search…"
-             inputProps={{ 'aria-label': 'search' }}
-             value={bookName}
-             onChange={event => setBookName(event.target.value)}
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ 'aria-label': 'search' }}
+              value={bookName}
+              onChange={event => setBookName(event.target.value)}
             />
           </Search>
-          <Button variant="outlined" sx={{color:'white',border:'1px solid white',fontWeight:'900'}} onClick={searchBook}>Search</Button>
+          <Button variant="outlined" sx={{ color: 'white', border: '1px solid white', fontWeight: '900' }} onClick={searchBook}>Search</Button>
         </Toolbar>
       </AppBar>
     </Box>

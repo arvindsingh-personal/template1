@@ -3,15 +3,17 @@
     height: 100vh;
     padding-top: 1rem;
 }
+
 .singlepage {
     display: flex;
     border: 1px solid rgb(211, 211, 211);
-     padding: 2rem;
+    padding: 2rem;
     background-color: aliceblue;
     border-radius: 5px;
     box-shadow: 0px -3px 18px gray;
 
 }
+
 .singlepage .left {
     border: 1px solid gray;
     padding: 1vw;
@@ -20,29 +22,35 @@
     background-color: rgb(255, 252, 248);
     margin-right: 1.6rem;
 }
+
 .singlepage .left img {
     width: 15rem;
     height: 50vh;
     border-radius: 5px;
 }
+
 .singlepage .right {
     width: 100%;
     text-align: left;
-    
+
 }
+
 .singlepage .right #para1 {
-   color: rgb(95, 92, 92);
-   font-size: 1.2rem;
-   font-weight: 300;
+    color: rgb(95, 92, 92);
+    font-size: 1.2rem;
+    font-weight: 300;
 }
+
 .singlepage .right #para2 {
     margin-top: 0;
- }
- .singlepage .right #para3 a {
-    text-decoration:underline;
+}
+
+.singlepage .right #para3 a {
+    text-decoration: underline;
     color: rgb(3, 93, 134);
- }
- .singlepage .right .div1 {
+}
+
+.singlepage .right .div1 {
     background-color: gainsboro;
     display: flex;
     justify-content: space-around;
@@ -50,19 +58,22 @@
     border-bottom: 1px solid gray;
     margin-top: 2rem;
 }
+
 .singlepage .right .div1 p {
-  margin-top: 0;
-  margin-bottom: 8px;
-  text-align: center;
-  
+    margin-top: 0;
+    margin-bottom: 8px;
+    text-align: center;
+
 }
 
 .singlepage .right .div1 p h5 {
     margin-bottom: 2px;
 }
+
 .singlepage .right .div1 p a {
     margin-top: 0;
 }
+
 .singlepage .right .div3 {
     text-align: left;
     border: 1px solid gray;
@@ -71,28 +82,33 @@
     width: 95%;
     margin-top: 2vh;
 }
+
 .singlepage .right .div3 p {
     margin-bottom: 4vw;
-    
+
 }
+
 hr {
     height: 1px;
     border: none;
-    background: hsla(48,33%,83%,.66);
+    background: hsla(48, 33%, 83%, .66);
 }
+
 .singlepage .right .div3 h4 {
     font-weight: 700;
     color: rgb(56, 56, 56);
 }
+
 .singlepage .right .div3 h1 {
     color: rgb(61, 61, 61);
 }
 
-@media  (max-width: 600px) {
+@media (max-width: 600px) {
     .singlepage {
         display: block;
         padding: 1.6rem;
     }
+
     .singlepage .left img {
         width: 20rem;
         height: 50vh;

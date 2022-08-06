@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import Navbar from './Navbar';
 import { Routes, Route } from 'react-router-dom';
@@ -13,7 +12,6 @@ function App() {
   const [bookName, setBookName] = useState('ramayan');
   return (
     <div className="App">
-
       <bookContext.Provider value={{book, setBook, bookName, setBookName}}>
         <Navbar />
         <Routes>
