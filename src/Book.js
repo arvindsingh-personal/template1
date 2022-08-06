@@ -22,7 +22,8 @@ import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
 import { orange } from '@mui/material/colors';
 import { lightBlue } from '@mui/material/colors';
-
+import { Height } from '@mui/icons-material';
+import axios from 'axios';
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -45,7 +46,18 @@ const ColorButton = styled(Button)(({ theme }) => ({
 }));
 
 export default function Book() {
-  let { book } = useContext(bookContext);
+  let { book,setBook,bookName } = useContext(bookContext);
+
+ 
+  const url = `https://openlibrary.org/search.json?q=${bookName}&mode=ebooks&has_fulltext=true`;
+
+  React.useEffect(()=>{
+    axios.get(url).then((response)=> {
+      setBook(response.data.docs)
+      console.log(response.data.docs)
+    })
+  },[])
+
 
   const [expanded, setExpanded] = React.useState(false);
 
@@ -62,7 +74,8 @@ export default function Book() {
       textAlign: 'left',
       backgroundColor: '#ddfff5',
       padding: '2.5vw',
-      width: '93.5vw'
+      width: '95vw',
+      height:'100%'
     }}>
       {book.map((item, index) => (
         <div className='book'>

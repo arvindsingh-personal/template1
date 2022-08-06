@@ -67,6 +67,8 @@ export default function Navbar() {
 
   const url = `https://openlibrary.org/search.json?q=${bookName}&mode=ebooks&has_fulltext=true`;
 
+  
+
   const searchBook = (event) => {
       axios.get(url).then((response)=> {
         setBook(response.data.docs)
