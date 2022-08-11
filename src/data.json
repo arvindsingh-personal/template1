@@ -1,0 +1,23 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Sujeet Sahu",
+      "image": "images/sujeet1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Akash Soni",
+      "image": "images/FunnyPhoto1.webp"
+    },
+    {
+      "id": 3,
+      "name": "Rahul Jain",
+      "image": "images/funny-image2.jpeg"
+    },
+    {
+    "id": 4,
+    "name": "Nitish Kumar",
+    "image": "images/funny-image3.jpg"}
+  ]
+}
