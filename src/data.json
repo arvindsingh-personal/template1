@@ -2,22 +2,41 @@
   "data": [
     {
       "id": 1,
+      "dp": "images/dp2.jpg",
       "name": "Sujeet Sahu",
-      "image": "images/sujeet1.jpg"
+      "image": "images/dp2.jpg",
+      "description": "Good evening..",
+      "comment":[],
+      "share":""
     },
     {
       "id": 2,
+      "dp": "images/dp3.jpg",
       "name": "Akash Soni",
-      "image": "images/FunnyPhoto1.webp"
+      "image": "images/pixa1.jpg",
+      "description": "Good evening..",
+      "comment":[],
+      "share":""
     },
     {
       "id": 3,
+      "dp": "images/dp4.jpg",
       "name": "Rahul Jain",
-      "image": "images/funny-image2.jpeg"
+      "image": "images/pixa3.jpg",
+      "description": "Good evening..",
+      "comment":[],
+      "share":""
     },
     {
-    "id": 4,
-    "name": "Nitish Kumar",
-    "image": "images/funny-image3.jpg"}
+      "id": 4,
+      "dp": "images/dp5.jpg",
+      "name": "Nitish Kumar",
+      "image": "images/pixa5.jpg",
+      "description": "Good evening..",
+      "comment":["Another method for setting Material-UI TextField width and height is a combination of sx at the TextField root",
+      "Another method for setting Material-UI TextField width and height is a combination of sx at the TextField root",
+      "Another method for setting Material-UI TextField width and height is a combination of sx at the TextField root"],
+      "share":""
+    }
   ]
 }

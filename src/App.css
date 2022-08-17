@@ -2,15 +2,15 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: rgb(219, 243, 243);
-  width: 90%;
+  /* background-color: rgb(219, 243, 243); */
+  width: 50rem;
   margin: 1rem auto;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
 #basic-menu{
   position: absolute;
-  left: -30%;
+  left: -40%;
   top: 4%;
 }
 .App-logo {
