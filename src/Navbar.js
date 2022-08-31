@@ -6,12 +6,61 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import { Button } from '@mui/material';
+import { Button, FormControlLabel, FormGroup, Switch } from '@mui/material';
 import { useContext } from 'react';
 import axios from 'axios';
 import { bookContext } from './App';
 import { NavLink } from 'react-router-dom';
 
+//Night Mode Switch
+const MaterialUISwitch = styled(Switch)(({ theme }) => ({
+  width: 62,
+  height: 34,
+  padding: 7,
+  '& .MuiSwitch-switchBase': {
+    margin: 1,
+    padding: 0,
+    transform: 'translateX(6px)',
+    '&.Mui-checked': {
+      color: '#fff',
+      transform: 'translateX(22px)',
+      '& .MuiSwitch-thumb:before': {
+        backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
+          '#fff',
+        )}" d="M4.2 2.5l-.7 1.8-1.8.7 1.8.7.7 1.8.6-1.8L6.7 5l-1.9-.7-.6-1.8zm15 8.3a6.7 6.7 0 11-6.6-6.6 5.8 5.8 0 006.6 6.6z"/></svg>')`,
+      },
+      '& + .MuiSwitch-track': {
+        opacity: 1,
+        backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#aab4be',
+      },
+    },
+  },
+  '& .MuiSwitch-thumb': {
+    backgroundColor: theme.palette.mode === 'dark' ? '#003892' : '#001e3c',
+    width: 32,
+    height: 32,
+    '&:before': {
+      content: "''",
+      position: 'absolute',
+      width: '100%',
+      height: '100%',
+      left: 0,
+      top: 0,
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundImage: `url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="20" width="20" viewBox="0 0 20 20"><path fill="${encodeURIComponent(
+        '#fff',
+      )}" d="M9.305 1.667V3.75h1.389V1.667h-1.39zm-4.707 1.95l-.982.982L5.09 6.072l.982-.982-1.473-1.473zm10.802 0L13.927 5.09l.982.982 1.473-1.473-.982-.982zM10 5.139a4.872 4.872 0 00-4.862 4.86A4.872 4.872 0 0010 14.862 4.872 4.872 0 0014.86 10 4.872 4.872 0 0010 5.139zm0 1.389A3.462 3.462 0 0113.471 10a3.462 3.462 0 01-3.473 3.472A3.462 3.462 0 016.527 10 3.462 3.462 0 0110 6.528zM1.665 9.305v1.39h2.083v-1.39H1.666zm14.583 0v1.39h2.084v-1.39h-2.084zM5.09 13.928L3.616 15.4l.982.982 1.473-1.473-.982-.982zm9.82 0l-.982.982 1.473 1.473.982-.982-1.473-1.473zM9.305 16.25v2.083h1.389V16.25h-1.39z"/></svg>')`,
+    },
+  },
+  '& .MuiSwitch-track': {
+    opacity: 1,
+    backgroundColor: theme.palette.mode === 'dark' ? '#8796A5' : '#aab4be',
+    borderRadius: 20 / 2,
+  },
+}));
+
+//Function to Search for Books
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -53,7 +102,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function Navbar() {
-  let { setBook, bookName, setBookName } = useContext(bookContext);
+  let { setBook, bookName, setBookName, setBgs, setBgs1, setBgs2, setBgs3, setBgs4, setButtonBgs, setButtonBgs1, setText, setText1, setText2, txt3, setText3, setText4, setText5, setText6, setText7 } = useContext(bookContext);
 
   const url = `https://openlibrary.org/search.json?q=${bookName}&mode=ebooks&has_fulltext=true`;
 
@@ -65,18 +114,55 @@ export default function Navbar() {
       console.log(response.data.docs)
     })
   }
+  // function for NightMode
+  const NightMode = (e) => {
+    if (e.target.checked) { 
+      setBgs('#A0C1B8');
+      setBgs1('#38444d');
+      setBgs2('#1d2a35');
+      setBgs3('#0d1721');
+      setBgs4(' #0d1721');
+      setButtonBgs('#282A35');
+      setButtonBgs1('#04AA6D');
+      setText('white');
+      setText1('#CFCFCF');
+      setText2('GREEN');
+      setText3('rgb(13,23,33)!important');
+      setText4('white');
+      setText5('white');
+      setText6('#04AA6D');
+      setText7('#FFC0C7');
+    }
+    else {
+      setBgs('#ddfff5');
+      setBgs1('#fff');
+      setBgs2('aliceblue');
+      setBgs3(' gainsboro');
+      setBgs4('#FFCFCF');
+      setButtonBgs('rgb(243, 102, 21)');
+      setButtonBgs1('rgb(243, 102, 21)');
+      setText('black');
+      setText1('rgb(66, 66, 66)');
+      setText2('rgb(66, 66, 66)');
+      setText3('brown');
+      setText4('#0C0C0C');
+      setText5('rgb(61, 61, 61)');
+      setText6('rgb(56, 56, 56)');
+      setText7('');
+    }
+  }
 
   return (
     <Box >
-      <AppBar sx={{ backgroundColor: 'brown' }} position='static' >
-        <Toolbar >
+      <AppBar  sx={{ backgroundColor: txt3 }} position='fixed' >
+        <Toolbar  >
           <Typography
             variant='h6'
             noWrap
             component='div'
             sx={{ display: { xs: 'none', sm: 'block' } }}
           >
-            <NavLink to='/' style={{ textDecoration: 'none', color: 'white', fontSize: '3vw' }} > Book</NavLink>
+            <NavLink to='/' style={{ textDecoration: 'none', color: 'white', fontSize: '2.8rem' }} > Book</NavLink>
           </Typography>
           <Search >
             <SearchIconWrapper >
@@ -90,7 +176,14 @@ export default function Navbar() {
             />
           </Search>
           <Button variant="outlined" sx={{ color: 'white', border: '1px solid white', fontWeight: '900' }} onClick={searchBook}>Search</Button>
+          <FormGroup  sx={{  }}>
+            <FormControlLabel
+              control={<MaterialUISwitch sx={{ m: 2 }}
+                onClick={NightMode} />}
+              label="" />
+          </FormGroup>
         </Toolbar>
+
       </AppBar>
     </Box>
   )

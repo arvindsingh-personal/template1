@@ -1,7 +1,6 @@
 .main-single {
-    background-color: #ddfff5;
-    height: 100vh;
     padding-top: 1rem;
+    margin-top: 3rem;
 }
 
 .singlepage {
@@ -15,17 +14,15 @@
 }
 
 .singlepage .left {
-    border: 1px solid gray;
     padding: 1vw;
-    height: 90%;
+    height: 95%;
     border-radius: 5px;
-    background-color: rgb(255, 252, 248);
     margin-right: 1.6rem;
 }
 
 .singlepage .left img {
-    width: 15rem;
-    height: 50vh;
+    width: 20rem;
+    height: 35rem;
     border-radius: 5px;
 }
 
@@ -35,8 +32,11 @@
 
 }
 
+.singlepage .right a:hover {
+    color: green !important;
+}
+
 .singlepage .right #para1 {
-    color: rgb(95, 92, 92);
     font-size: 1.2rem;
     font-weight: 300;
 }
@@ -51,7 +51,6 @@
 }
 
 .singlepage .right .div1 {
-    background-color: gainsboro;
     display: flex;
     justify-content: space-around;
     border-top: 1px solid gray;
@@ -96,19 +95,14 @@ hr {
 
 .singlepage .right .div3 h4 {
     font-weight: 700;
-    color: rgb(56, 56, 56);
 }
 
-.singlepage .right .div3 h1 {
-    color: rgb(61, 61, 61);
-}
 
 @media (max-width: 600px) {
     .singlepage {
         display: block;
         padding: 1.6rem;
     }
-
     .singlepage .left img {
         width: 20rem;
         height: 50vh;
