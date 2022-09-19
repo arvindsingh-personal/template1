@@ -10,28 +10,79 @@
 </head>
 
 <body>
-  <p style="border:1px solid gray;height:5rem">
+  <!-- Create an object -->
+  <div style="border:1px solid gray;height:5rem">
     <select name="position" id="position" onchange='Position()'>
-      <option>Position</option>
+      <option disabled selected>Position</option>
       <option value="Cashier">Cashier</option>
       <option value="Manager">Manager</option>
     </select>
     <select name="type" id="type" onchange='Type()'>
-      <option>Type</option>
+      <option disabled selected>Type</option>
       <option value="Hourly">Hourly</option>
       <option value="Monthly">Monthly</option>
       <option value="Daily">Daily</option>
     </select>
     <select name="availability" id="availability" onchange='Availability()'>
-      <option>IsAvailable</option>
+      <option disabled selected>IsAvailable</option>
       <option value="True">True</option>
       <option value="False">False</option>
     </select>
-    <button onclick="Print()">Show</button>
-  <p id="demo"></p>
-  </p>
+    <button onclick="Create()">Create</button>
+    <button onclick="Update()">Update</button>
+    <button onclick="Freez()">Freeze</button>
+    <button onclick="showDetails()">Print</button>
+    <p id="demo"></p>
+  </div>
+  <!-- Print all the keys of object -->
+  <div style="border:1px solid gray">
+    <h3>Print value of all the keys and values of object</h3>
+    <p id="keyNum">Number of keys are:</p>
+    <p id="keys">Keys of the above created Object is : </p>
+    <p id="values">Values of the above created Object is : </p>
+    <button onclick="printKeys()">Get Keys and Values</button>
+  </div>
+  <!-- Print all the key values as an individual array, nested in an array -->
+  <div style="border:1px solid black;height:100%">
+    <h3>Print all the key values as an individual array, nested in an array</h3>
+    <p id="demo1"></p>
+    <button onclick="printArray()">Print</button>
+  </div>
+  <!-- Create one more object for food items and merge with above created object to get a new object and print it. -->
+  <div style="border:1px solid gray">
+    <h3>Create one more object for food items and merge with above created object to get a new object and print it.</h3>
+    <select name="name" id="name" onchange='Name()'>
+      <option disabled selected>Name</option>
+      <option value="Mango">Mango</option>
+      <option value="Grapes">Grapes</option>
+      <option value="Apple">Apple</option>
+      <option value="Banana">Banana</option>
+      <option value="Biscuit">Biscuit</option>
+      <option value="Cold-drink">Cold-drink</option>
+      <option value="Chees">Chees</option>
+      <option value="Milk">Milk</option>
+      <option value="Curd">Curd</option>
+    </select>
+    <select name="category" id="category" onchange='Category()'>
+      <option disabled selected>Category</option>
+      <option value="Fruit">Fruit</option>
+      <option value="Grocery">Grocery</option>
+      <option value="Beverages">Beverages</option>
+      <option value="Dairy Products">Dairy Products</option>
+    </select>
+    <select name="available" id="available" onchange='Available()'>
+      <option disabled selected>IsAvailable</option>
+      <option value="True">True</option>
+      <option value="False">False</option>
+    </select>
+    <button onclick="Create1()">Create</button>
 
+    <p id="demo2">Merged Object is : </p>
+    <button onclick="Merge()">Print Merged Object</button>
+  </div>
+  <div style="border:1px solid gray">
 
+  </div>
 </body>
 
 </html>
