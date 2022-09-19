@@ -1,9 +1,23 @@
+let position;
+let type;
+let available;
+const emp = {};
 function Position() {
-  alert(document.getElementById('position').value);
+  position = document.getElementById('position').value;
 }
 function Type() {
-  alert(document.getElementById('type').value);
+  type = document.getElementById('type').value;
 }
 function Availability() {
-  alert(document.getElementById('availability').value)
+  available = document.getElementById('availability').value;
+}
+function Print() {
+  console.log(position + " " + type + " " + available);
+  emp = { position: position, type: type, availability: available }
+  showDetails();
+}
+
+function showDetails() {
+  document.getElementById('demo').innerHTML = emp.position + " " + emp.type + " " + emp.availability;
+  const Employee = Object.create(emp);
 }
