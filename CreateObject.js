@@ -1,7 +1,7 @@
 let position;
 let type;
 let available;
-const emp = {};
+let emp = {};
 function Position() {
   position = document.getElementById('position').value;
 }
@@ -19,5 +19,5 @@ function Print() {
 
 function showDetails() {
   document.getElementById('demo').innerHTML = emp.position + " " + emp.type + " " + emp.availability;
-  const Employee = Object.create(emp);
+  let Employee = Object.create(emp);
 }
